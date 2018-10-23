@@ -1,0 +1,45 @@
+package com.bmdb.web;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.bmdb.business.movie.Movie;
+import com.bmdb.business.movie.MovieRepository;
+import com.bmdb.util.JsonResponse;
+
+@Controller
+@RequestMapping("/Movies")
+public class MovieController {
+	
+	@Autowired
+	private MovieRepository movieRepository;
+	
+	@GetMapping("/List")
+	public @ResponseBody JsonResponse getAllMovies() {
+		try {
+			return JsonResponse.getInstance(movieRepository.findAll());
+		}
+		catch (Exception e) {
+			return JsonResponse.getErrorInstance("Movie list failure: "+e.getMessage(), e);
+		}
+	}
+	
+	@GetMapping("/Get/{id}")
+	public @ResponseBody JsonResponse getMovie(@PathVariable int id) {
+		try {
+			Optional<Movie> movie = movieRepository.findById(id);
+			if (movie.isPresent())
+				return JsonResponse.getInstance(movie.get());
+			else
+				return JsonResponse.getErrorInstance("Movie not found for id: "+e.getMessage(), null);
+		}
+		
+	}
+
+}

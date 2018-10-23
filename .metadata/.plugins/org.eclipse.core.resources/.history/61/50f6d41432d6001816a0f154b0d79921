@@ -1,0 +1,9 @@
+package com.bmdb.business.actor;
+
+import javax.persistence.Entity;
+
+@Entity
+public class actor {
+	
+
+}

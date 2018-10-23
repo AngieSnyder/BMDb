@@ -1,0 +1,84 @@
+package com.bmdb.business.actor;
+
+import java.time.LocalDate;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Actor {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private int firstName;
+	private int lastName;
+	private int gender;
+	private LocalDate birthDate;
+	
+	public Actor(int id, int firstName, int lastName, int gender, LocalDate birthDate) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.birthDate = birthDate;
+	}
+
+	public Actor(int firstName, int lastName, int gender, LocalDate birthDate) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.birthDate = birthDate;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(int firstName) {
+		this.firstName = firstName;
+	}
+
+	public int getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(int lastName) {
+		this.lastName = lastName;
+	}
+
+	public int getGender() {
+		return gender;
+	}
+
+	public void setGender(int gender) {
+		this.gender = gender;
+	}
+
+	public LocalDate getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(LocalDate birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	@Override
+	public String toString() {
+		return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
+				+ ", birthDate=" + birthDate + "]";
+	}
+	
+	
+}
