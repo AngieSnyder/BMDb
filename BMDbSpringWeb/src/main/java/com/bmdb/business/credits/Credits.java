@@ -36,6 +36,9 @@ public class Credits {
 		this.characterName = characterName;
 	}
 	
+	public Credits() {
+	
+	}
 
 	public int getId() {
 		return id;

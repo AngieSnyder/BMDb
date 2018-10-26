@@ -19,6 +19,7 @@ import com.bmdb.util.JsonResponse;
 @Controller
 @RequestMapping("/Credits")
 public class CreditsController {
+	
 	@Autowired
 	private CreditsRepository creditsRepository;
 

@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.bmdb.business.actor.Actor;
 import com.bmdb.business.actor.ActorRepository;
 import com.bmdb.util.JsonResponse;
+
 @Controller
 @RequestMapping("/Actors")
 public class ActorController {
+	
 	@Autowired
 	private ActorRepository actorRepository;
 

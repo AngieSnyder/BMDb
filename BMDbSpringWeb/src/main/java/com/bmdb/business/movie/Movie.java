@@ -14,16 +14,18 @@ public class Movie {
 	private int year;
 
 	public Movie(int id, String title, int year) {
-		super();
 		this.id = id;
 		this.title = title;
 		this.year = year;
 	}
 
 	public Movie(String title, int year) {
-		super();
 		this.title = title;
 		this.year = year;
+	}
+	
+	public Movie() {
+		
 	}
 
 	public int getId() {
